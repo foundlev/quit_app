@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Приложение для Поддержки</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="header-title">Твой Прогресс</h1>
+
+        <!-- Кнопка для переключения настроек -->
+        <button id="toggle-settings" class="toggle-button">Настройки</button>
+
+        <!-- Отображение текущего дня -->
+        <div id="current-day" class="card current-day-card">
+            <h2 class="card-title">Текущий День Воздержания</h2>
+            <p class="current-day-text">Загрузка...</p>
+        </div>
+
+        <!-- Общая информация -->
+        <div id="general-text" class="card general-text-card">
+            <h2 class="card-title">Общая информация</h2>
+            <p class="general-text-content">Загрузка...</p>
+        </div>
+
+        <!-- Процент восстановления -->
+        <div id="recovery-percentage" class="card recovery-percentage-card">
+            <h2 class="card-title">Процент Восстановления</h2>
+            <div class="progress-bar-container">
+                <progress id="recovery-progress" class="progress-bar" value="0" max="100">35%</progress>
+                <span id="recovery-percentage-text" class="recovery-percentage-text">35%</span>
+            </div>
+        </div>
+
+        <!-- Параметры -->
+        <div id="parameters" class="card parameters-card">
+            <h2 class="card-title">Параметры</h2>
+            <ul class="parameters-list">Загрузка...</ul>
+        </div>
+
+        <!-- Вопросы на сегодня -->
+        <div id="questions" class="card questions-card">
+            <h2 class="card-title">Вопросы на Сегодня</h2>
+            <ol class="questions-list">Загрузка...</ol>
+        </div>
+
+        <!-- Форма для отправки отчета -->
+        <div id="report-form" class="card report-form-card">
+            <h2 class="card-title">Отправить Отчет</h2>
+            <form id="submit-form" class="report-form">
+                <label for="notes" class="form-label">Ваши ответы и примечания:</label>
+                <textarea id="notes" name="notes" rows="5" class="form-textarea" placeholder="Введите ваши ответы и примечания здесь..." required></textarea>
+
+                <label for="difficulty" class="form-label">Оценка трудности удержаться (1-5):</label>
+                <input type="range" id="difficulty" name="difficulty" class="form-slider" min="1" max="5" value="3" required>
+                <span id="difficulty-value" class="difficulty-value">3</span>
+
+                <button type="submit" class="submit-button">Отправить Отчет</button>
+            </form>
+        </div>
+
+        <!-- Настройки -->
+        <div id="settings" class="card settings-card hidden">
+            <h2 class="card-title">Настройки</h2>
+            <form id="settings-form" class="settings-form">
+                <label for="last-relapse" class="form-label">Последняя дата и время срыва:</label>
+                <input type="datetime-local" id="last-relapse" name="last-relapse" class="form-input" required>
+
+                <button type="submit" class="submit-button">Сохранить Настройки</button>
+            </form>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
